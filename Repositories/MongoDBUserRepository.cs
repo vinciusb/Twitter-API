@@ -14,8 +14,10 @@ namespace TwitterAPI.Repository {
 			IMongoDatabase db = mongoClient.GetDatabase(MongoDbSettings.DB_NAME);
 			usersCollection = db.GetCollection<User>(collectionName);
 			//			
-			var sort = Builders<User>.Sort.Descending("columnName"); //build sort object   
-			var biggestUser = usersCollection.Find(new BsonDocument()).Sort(sort).FirstOrDefault(); //apply it to collection
+			var sort = Builders<User>.Sort.Descending("Id"); //build sort object   
+			var aaa = usersCollection.Find(new BsonDocument()).Sort(sort);
+			var biggestUser = aaa.FirstOrDefault(); //apply it to collection
+
 			if(biggestUser != null) {
 				lastUserId = biggestUser.Id;
 			}

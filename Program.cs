@@ -2,13 +2,13 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
+using TwitterAPI.Controllers;
 using TwitterAPI.Repository;
 using TwitterAPI.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers(options => {
 	options.SuppressAsyncSuffixInActionNames = false;
 });
@@ -23,7 +23,9 @@ var mongoDbSettings = builder.Configuration.GetSection(nameof(MongoDbSettings)).
 builder.Services.AddSingleton<IMongoClient>(serviceProvider => {
 	return new MongoClient(mongoDbSettings.ConnectionString);
 });
+
 builder.Services.AddSingleton<IUsersRepository, MongoDBUserRepository>();
+builder.Services.AddSingleton<ITweetRepository, MongoDBTweetRepository>();
 
 var app = builder.Build();
 
@@ -34,7 +36,6 @@ if(app.Environment.IsDevelopment()) {
 }
 
 if(app.Environment.IsDevelopment()) { app.UseHttpsRedirection(); }
-
 
 app.UseAuthorization();
 

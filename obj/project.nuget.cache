@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "26SZp7+XvG1eWR/CVaMqnz/zp9ze2BAQyypIaWXhb0CjkQ9nVSQw9Jm6SdMG52pfqNoxggkD9tDMT/0tY6nwFQ==",
+  "dgSpecHash": "rB8o4PQitF3NE+x7SMMOkDq9ttFWBn163n6lB06dqTr0tt5yV935hp1b12wU4iUbki4dykf15Om7EZM7MNMK5g==",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\vscode\\twitter-clone\\back-end\\back-end.csproj",
+  "projectFilePath": "d:\\Projetos\\vscode\\twitter-clone\\back-end\\back-end.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinic\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

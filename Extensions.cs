@@ -3,6 +3,7 @@ using TwitterAPI.Entities;
 
 namespace TwitterAPI {
 	public static class Extensions {
+		// User
 		public static UserDTO AsDTO(this User user) {
 			return new UserDTO(user.At,
 							   user.Name,
@@ -36,6 +37,17 @@ namespace TwitterAPI {
 				Colors = user.Colors,
 				Birthday = user.Birthday,
 			};
+		}
+		// Tweet
+		public static TweetDTO AsDTO(this Tweet tweet) {
+			return new TweetDTO(
+				tweet.Id,
+				tweet.Text,
+				tweet.OwnerId,
+				tweet.Likes,
+				tweet.RepliesId,
+				tweet.IsReplyTo)
+			;
 		}
 	}
 }
